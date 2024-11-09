@@ -1,0 +1,221 @@
+body {
+  background: linear-gradient(to bottom, #FFFF00, #000000); /* Fondo degradado de amarillo a negro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo del contenedor principal del componente */
+.mutant-detector-container {
+  background-color: #fff; /* Fondo blanco para el login */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.mutant-detector-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.mutant-detector-container p {
+  font-size: 16px;
+  color: #0a0808;
+}
+
+/* Estilo para el input */
+.mutant-detector-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Estilo para el botón */
+.mutant-detector-container button {
+  padding: 12px 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.mutant-detector-container button:hover {
+  background-color: #0097a7;
+}
+
+/* Estilo para mostrar los errores */
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Estilo para el spinner de carga */
+.spinner {
+  border: 4px solid #f3f3f3; /* Fondo gris claro */
+  border-top: 4px solid #00bcd4; /* Celeste */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Animación continua */
+  margin: 20px auto; /* Centra el spinner */
+}
+
+/* Animación del spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilo del modal de error (popup) */
+.error-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.error-modal-content {
+  background-color: #ff3333; /* Rojo */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+}
+
+/* Botón de cierre */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilo del modal de éxito (popup) */
+.success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro y semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.success-modal-content {
+  background: linear-gradient(to bottom, #4CAF50, #000000); /* Degradado de verde a negro */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+}
+
+.success-modal input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success-modal button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-modal button:hover {
+  background-color: #45a049;
+}
+
+/* Cambio de color al pasar el cursor sobre el botón */
+.success-modal .close-btn,
+.error-modal .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Evitar que el fondo de la pantalla se ponga verde */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+}
+
+/* Hacer que el modal no ocupe toda la pantalla */
+.success-modal, .error-modal {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.success-modal-content, .error-modal-content {
+  width: 100%;
+  max-width: 300px; /* Asegura que los modales no sean demasiado grandes */
+  background: white;
+  padding: 20px;
+  
+  border-radius: 8px;
+  text-align: center;
+}
+
+.success-modal-content {
+  background: linear-gradient(to bottom, #4CAF50, #000000);
+}
+
+.error-modal-content {
+  background-color: #ff3333;
+}
+
