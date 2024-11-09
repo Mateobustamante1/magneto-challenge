@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { authenticate } from '../utils/mockAuth';
 import '../styles/Login.css';
+import iconmeli from '../assets/iconmeli.png';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -18,6 +19,7 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-container">
+      <img src={iconmeli} alt="Icono Meli" className="iconmeli" />
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input

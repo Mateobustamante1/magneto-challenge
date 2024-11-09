@@ -219,3 +219,11 @@ body {
   background-color: #ff3333;
 }
 
+.iconmeli {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  width: 100px; /* Ajusta el tamaño según prefieras */
+  height: auto;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}

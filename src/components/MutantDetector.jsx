@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { isMutant } from '../utils/dnaChecker';
 import '../styles/App.css';
+import iconmeli from '../assets/iconmeli.png';
 
 const MutantDetector = () => {
   const [dna, setDna] = useState("");
@@ -11,12 +12,12 @@ const MutantDetector = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false); 
   const [email, setEmail] = useState(""); 
   const [isEmailSubmitted, setIsEmailSubmitted] = useState(false); 
+
   const handleCheckDna = () => {
     setLoading(true); 
     setError(null);  
     setShowErrorModal(false); 
     setShowSuccessModal(false); 
-
 
     setTimeout(() => {
       const isValidDna = /^[ATCG]+$/.test(dna);
@@ -66,6 +67,7 @@ const MutantDetector = () => {
 
   return (
     <div className="mutant-detector-container">
+      <img src={iconmeli} alt="Icono Meli" className="iconmeli" />
       <h2>Detector ADN</h2>
       <p>Ingresá tu código de ADN</p>
       <input
