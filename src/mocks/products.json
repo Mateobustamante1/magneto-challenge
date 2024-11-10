@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "name": "ED limited Magneto",
+      "price": "$58.190",
+      "location": "12 cuotas sin interes",
+      "description": " energías magnéticas.",
+      "image": "https://http2.mlstatic.com/D_Q_NP_2X_847251-MLA70056333992_062023-E.webp",
+      "productUrl" : "https://articulo.mercadolibre.com.ar/MLA-1373717813-figura-minico-magneto-x-men-marcas68922-mc-iron-studios-_JM#polycard_client=search-nordic&position=6&search_layout=grid&type=item&tracking_id=98913f53-5752-4273-870b-c12db865f66c"
+    },
+    {
+      "id": 2,
+      "name": "Guantes de Magneto",
+      "price": "$99.899",
+      "location": "3 cuotas sin interes",
+      "description": "Guantes especiales.",
+      "image": "https://http2.mlstatic.com/D_Q_NP_2X_950129-MLU72466642114_102023-E.webp",
+      "productUrl" : "https://articulo.mercadolibre.com.ar/MLA-1455316321-figura-hasbro-marvel-legends-series-x-men-97-magneto-_JM#polycard_client=search-nordic&position=10&search_layout=grid&type=item&tracking_id=57eb2140-0744-4004-adc4-acef8ec10e8b"
+    },
+    {
+      "id": 3,
+      "name": "Casco de Magneto",
+      "price": "$1.700",
+      "location": "6 cuotas sin interes",
+      "description": "Proteccion mental.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_697224-MLA47109195747_082021-F.webp",
+      "productUrl" : "https://articulo.mercadolibre.com.ar/MLA-607262092-plano-casco-magneto-x-men-marvel-wolverine-vengadores-thor-_JM#polycard_client=search-nordic&position=8&search_layout=grid&type=item&tracking_id=71f8565f-8be6-4563-b576-6d7748c99118"
+    },
+    {
+      "id": 4,
+      "name": "Muñeco Magneto",
+      "price": "$145.490",
+      "location": "6 cuotas sin interes",
+      "description": "Serie limitada.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_683898-MLU76675758634_062024-F.webp",
+      "productUrl" : "https://articulo.mercadolibre.com.ar/MLA-1942630158-figura-magneto-x-men-97-marvel-legends-series-hasbro-f6552-_JM#polycard_client=search-nordic&position=13&search_layout=grid&type=item&tracking_id=47d72741-69a9-4ccb-9e0c-64828fcc430f"
+    },
+    {
+      "id": 5,
+      "name": "Soporte casco",
+      "price": "$1.700",
+      "location": "3 cuotas sin interes",
+      "description": "Soporte magnetico.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_2X_746516-MLA47110846622_082021-F.webp",
+      "productUrl" : "https://articulo.mercadolibre.com.ar/MLA-934428287-plano-casco-magneto-x-men-pelicula-marvel-disney-wolverine-_JM#polycard_client=search-nordic&position=33&search_layout=grid&type=item&tracking_id=c9207b0e-1f8f-4690-837a-1a49221645ee"
+    }
+  ]
+  

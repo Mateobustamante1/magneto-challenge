@@ -13,7 +13,7 @@ body {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #000000;
+  border: 1px solid #fdfbfb;
   border-radius: 5px;
   background-color: #FFFFFF; 
   box-sizing: border-box; 
@@ -39,7 +39,7 @@ body {
 .login-container button {
   width: 100%;
   padding: 10px;
-  background-color: #000802;
+  background-color: #1adae7;
   color: white;
   border: none;
   border-radius: 3px;

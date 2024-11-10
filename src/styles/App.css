@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to bottom, #FFFF00, #000000); /* Fondo degradado de amarillo a negro */
+  background: linear-gradient(to bottom, #FFFF00, #000000); 
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,9 +9,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Estilo del contenedor principal del componente */
 .mutant-detector-container {
-  background-color: #fff; /* Fondo blanco para el login */
+  background-color: #fff; 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -30,7 +29,7 @@ body {
   color: #0a0808;
 }
 
-/* Estilo para el input */
+
 .mutant-detector-container input {
   width: 100%;
   padding: 12px;
@@ -42,7 +41,7 @@ body {
   text-align: center;
 }
 
-/* Estilo para el botón */
+
 .mutant-detector-container button {
   padding: 12px 20px;
   background-color: #00bcd4;
@@ -58,38 +57,38 @@ body {
   background-color: #0097a7;
 }
 
-/* Estilo para mostrar los errores */
+
 .error {
   color: red;
   margin-top: 10px;
   font-size: 14px;
 }
 
-/* Estilo para el spinner de carga */
+
 .spinner {
-  border: 4px solid #f3f3f3; /* Fondo gris claro */
-  border-top: 4px solid #00bcd4; /* Celeste */
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #00bcd4; 
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite; /* Animación continua */
-  margin: 20px auto; /* Centra el spinner */
+  animation: spin 1s linear infinite; 
+  margin: 20px auto; 
 }
 
-/* Animación del spinner */
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Estilo del modal de error (popup) */
+
 .error-modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,8 +96,7 @@ body {
 }
 
 .error-modal-content {
-  background-color: #ff3333; /* Rojo */
-  color: white;
+  background-color: #ff3333; 
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -107,7 +105,7 @@ body {
   max-width: 300px;
 }
 
-/* Botón de cierre */
+
 .close-btn {
   position: absolute;
   top: 5px;
@@ -117,14 +115,14 @@ body {
   cursor: pointer;
 }
 
-/* Estilo del modal de éxito (popup) */
+
 .success-modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro y semitransparente */
+  background-color: rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +130,7 @@ body {
 }
 
 .success-modal-content {
-  background: linear-gradient(to bottom, #4CAF50, #000000); /* Degradado de verde a negro */
+  background: linear-gradient(to bottom, #4CAF50, #fffefe); 
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -167,7 +165,7 @@ body {
   background-color: #45a049;
 }
 
-/* Cambio de color al pasar el cursor sobre el botón */
+
 .success-modal .close-btn,
 .error-modal .close-btn {
   position: absolute;
@@ -178,7 +176,7 @@ body {
   cursor: pointer;
 }
 
-/* Evitar que el fondo de la pantalla se ponga verde */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -189,10 +187,10 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  background: rgba(0, 0, 0, 0.5); 
 }
 
-/* Hacer que el modal no ocupe toda la pantalla */
+
 .success-modal, .error-modal {
   background-color: transparent;
   display: flex;
@@ -203,7 +201,7 @@ body {
 
 .success-modal-content, .error-modal-content {
   width: 100%;
-  max-width: 300px; /* Asegura que los modales no sean demasiado grandes */
+  max-width: 300px; 
   background: white;
   padding: 20px;
   
@@ -212,7 +210,7 @@ body {
 }
 
 .success-modal-content {
-  background: linear-gradient(to bottom, #4CAF50, #000000);
+  background: linear-gradient(to bottom, #4CAF50, #f7f6f6);
 }
 
 .error-modal-content {
@@ -223,7 +221,7 @@ body {
   position: fixed;
   top: 10px;
   left: 20px;
-  width: 100px; /* Ajusta el tamaño según prefieras */
+  width: 100px; 
   height: auto;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000;
 }

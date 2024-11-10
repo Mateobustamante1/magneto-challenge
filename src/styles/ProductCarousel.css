@@ -1,0 +1,160 @@
+.product-carousel-message {
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    color: #fff;
+    padding: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centra el texto */
+    background: linear-gradient(135deg, #ff0000, #100101); /* Degradado de rojo a blanco */
+    border-radius: 8px;
+}
+
+.back-arrow-icon {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-arrow-icon:hover {
+    color: #ff0000; /* Cambia el color al pasar el cursor */
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 16px;
+    position: relative;
+    z-index: 0;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    margin-top: 10px; /* Espacio arriba para separarlo de MutantDetector */
+    margin-bottom: 20px; /* Espacio abajo para separarlo del siguiente componente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar el carrusel */
+    flex-wrap: wrap; /* Asegura que las cards se ajusten mejor en la pantalla */
+    justify-content: flex-start; /* Alinea las cards desde el principio */
+}
+
+.card {
+    width: 160px; /* Ancho adecuado para una mejor visibilidad */
+    height: 350px; /* Altura suficiente para mostrar todos los elementos */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+    justify-content: space-between;
+    align-items: center; 
+}
+.card:hover {
+    transform: scale(1.05); 
+}
+.card-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 8px 0;
+    flex-grow: 1; 
+}
+
+.card-price {
+    color: #4caf50;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.card-location,
+.card-description {
+    font-size: 14px;
+    color: #666;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+.back-button {
+    position: relative;
+    padding: 8px 16px;
+    margin: 16px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.back-button:hover {
+    background-color: #388e3c;
+}
+
+
+.carousel-container-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff0000, #ffffff); /* Degradado rojo a blanco */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+
+.carousel-container-message.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+

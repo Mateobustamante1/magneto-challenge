@@ -3,29 +3,30 @@ import { isMutant } from '../utils/dnaChecker';
 import '../styles/App.css';
 import iconmeli from '../assets/iconmeli.png';
 
-const MutantDetector = () => {
+const MutantDetector = ({ onHumanDetected }) => {
   const [dna, setDna] = useState("");
   const [isMutantResult, setIsMutantResult] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false); 
-  const [showErrorModal, setShowErrorModal] = useState(false); 
-  const [showSuccessModal, setShowSuccessModal] = useState(false); 
-  const [email, setEmail] = useState(""); 
-  const [isEmailSubmitted, setIsEmailSubmitted] = useState(false); 
+  const [loading, setLoading] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
 
   const handleCheckDna = () => {
-    setLoading(true); 
-    setError(null);  
-    setShowErrorModal(false); 
-    setShowSuccessModal(false); 
+    setLoading(true);
+    setError(null);
+    setShowErrorModal(false);
+    setShowSuccessModal(false);
 
     setTimeout(() => {
       const isValidDna = /^[ATCG]+$/.test(dna);
 
       if (!isValidDna) {
-        setError("Eres un humano, no podes formar parte del clan de Magneto.");
-        setIsMutantResult(null); 
-        setShowErrorModal(true); 
+        setError("Eres un humano, no puedes formar parte del clan de Magneto.");
+        setIsMutantResult(null);
+        setShowErrorModal(true);
+        onHumanDetected(); 
       } else {
         const result = isMutant(dna);
         setIsMutantResult(result);
@@ -33,16 +34,17 @@ const MutantDetector = () => {
         if (result) {
           setShowSuccessModal(true);
         } else {
-          setShowErrorModal(true); 
+          setShowErrorModal(true);
+          onHumanDetected(); 
         }
       }
 
-      setLoading(false); 
-    }, 3000); 
+      setLoading(false);
+    }, 3000);
   };
 
   const handleChangeDna = (e) => {
-    setDna(e.target.value.toUpperCase()); 
+    setDna(e.target.value.toUpperCase());
   };
 
   const handleChangeEmail = (e) => {
@@ -52,8 +54,8 @@ const MutantDetector = () => {
   const handleSubmitEmail = (e) => {
     e.preventDefault();
     setIsEmailSubmitted(true);
-    setShowSuccessModal(false); 
-    console.log("Email enviado: ", email); 
+    setShowSuccessModal(false);
+    console.log("Email enviado: ", email);
   };
 
   const closeErrorModal = () => {
@@ -61,12 +63,12 @@ const MutantDetector = () => {
   };
 
   const closeSuccessModal = () => {
-    setShowSuccessModal(false); 
-    setIsEmailSubmitted(false); 
+    setShowSuccessModal(false);
+    setIsEmailSubmitted(false);
   };
 
   return (
-    <div className="mutant-detector-container">
+    <div className={`mutant-detector-container fade-in ${showErrorModal ? "fade-out" : ""}`}>
       <img src={iconmeli} alt="Icono Meli" className="iconmeli" />
       <h2>Detector ADN</h2>
       <p>Ingresá tu código de ADN</p>
@@ -74,13 +76,13 @@ const MutantDetector = () => {
         type="text"
         value={dna}
         onChange={handleChangeDna}
-        maxLength={6} 
+        maxLength={6}
         placeholder="Ingrese la secuencia"
       />
       <button onClick={handleCheckDna} disabled={loading}>
         {loading ? 'Validando...' : 'Verificar ADN'}
       </button>
-      {loading && <div className="spinner"></div>} 
+      {loading && <div className="spinner"></div>}
       {error && <p className="error">{error}</p>}
       {isMutantResult !== null && !error && (
         <p>{isMutantResult ? "Felicitaciones, eres un mutante. Completa tu email y Magneto te reclutará en breve." : "No se detectó mutante."}</p>
@@ -114,7 +116,7 @@ const MutantDetector = () => {
       {isEmailSubmitted && !showSuccessModal && (
         <div className="success-modal">
           <div className="success-modal-content">
-            <span className="close-btn" onClick={closeSuccessModal}>×</span> 
+            <span className="close-btn" onClick={closeSuccessModal}>×</span>
             <p>Email enviado exitosamente. ¡Te esperamos, mutante!</p>
           </div>
         </div>
