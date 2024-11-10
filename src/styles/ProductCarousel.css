@@ -53,6 +53,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     display: flex;
+    cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
