@@ -9,15 +9,15 @@
     background: linear-gradient(135deg, #ff0000, #100101);
     border-radius: 8px;
     width: 90%;
-    max-width: 500px; /* Limita el ancho para no abarcar todo el contenedor */
-    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 500px; 
+    margin: 0 auto; 
 }
 
 .back-arrow-icon {
     font-size: 24px;
     color: #333;
     cursor: pointer;
-    margin-top: 10px; /* Separa el icono del mensaje */
+    margin-top: 10px; 
     margin-bottom: 10px;
     transition: color 0.3s ease;
 }
@@ -36,15 +36,15 @@
     width: 100%;
     max-width: 100%;
     border-radius: 8px;
-    margin-top: 10px; /* Ajusta el espacio superior */
+    margin-top: 10px; 
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     justify-content: center;
 }
 
 .card {
-    width: 170px; /* Ancho reducido */
-    height: 300px; /* Altura reducida */
+    width: 170px; 
+    height: 300px; 
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
@@ -67,7 +67,7 @@
 .card-image {
     width: 100%;
     height: auto;
-    max-height: 140px; /* Altura máxima ajustada */
+    max-height: 140px; 
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 8px;
@@ -91,7 +91,7 @@
     color: #666;
 }
 
-/* Ajustes específicos para pantallas móviles */
+
 @media (max-width: 768px) {
     .carousel-container {
         gap: 8px;
