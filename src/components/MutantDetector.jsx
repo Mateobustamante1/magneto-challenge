@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { isMutant } from '../utils/dnaChecker';
+import locales from '../locales-app/locales.json';
 import '../styles/App.css';
 import iconmeli from '../assets/iconmeli.png';
 
-const MutantDetector = ({ onHumanDetected }) => {
+const MutantDetector = ({ onHumanDetected, language }) => {
   const [dna, setDna] = useState("");
   const [isMutantResult, setIsMutantResult] = useState(null);
   const [error, setError] = useState(null);
@@ -12,6 +13,8 @@ const MutantDetector = ({ onHumanDetected }) => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [email, setEmail] = useState("");
   const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
+
+  const texts = locales[language] || locales["es"]; 
 
   const handleCheckDna = () => {
     setLoading(true);
@@ -23,7 +26,7 @@ const MutantDetector = ({ onHumanDetected }) => {
       const isValidDna = /^[ATCG]+$/.test(dna);
 
       if (!isValidDna) {
-        setError("Eres un humano, no puedes formar parte del clan de Magneto.");
+        setError(texts.humanError); 
         setIsMutantResult(null);
         setShowErrorModal(true);
         onHumanDetected(); 
@@ -55,7 +58,7 @@ const MutantDetector = ({ onHumanDetected }) => {
     e.preventDefault();
     setIsEmailSubmitted(true);
     setShowSuccessModal(false);
-    console.log("Email enviado: ", email);
+    console.log("Email enviado: ", email); 
   };
 
   const closeErrorModal = () => {
@@ -69,23 +72,23 @@ const MutantDetector = ({ onHumanDetected }) => {
 
   return (
     <div className={`mutant-detector-container fade-in ${showErrorModal ? "fade-out" : ""}`}>
-      <img src={iconmeli} alt="Icono Meli" className="iconmeli" />
-      <h2>Detector ADN</h2>
-      <p>Ingresá tu código de ADN</p>
+      <img src={iconmeli} alt={texts.iconAltText} className="iconmeli" />
+      <h2>{texts.mutantDetectorTitle}</h2>
+      <p>{texts.dnaPrompt}</p>
       <input
         type="text"
         value={dna}
         onChange={handleChangeDna}
         maxLength={6}
-        placeholder="Ingrese la secuencia"
+        placeholder={texts.dnaPlaceholder}
       />
       <button onClick={handleCheckDna} disabled={loading}>
-        {loading ? 'Validando...' : 'Verificar ADN'}
+        {loading ? texts.loadingText : texts.verifyDnaButton}
       </button>
       {loading && <div className="spinner"></div>}
       {error && <p className="error">{error}</p>}
       {isMutantResult !== null && !error && (
-        <p>{isMutantResult ? "Felicitaciones, eres un mutante. Completa tu email y Magneto te reclutará en breve." : "No se detectó mutante."}</p>
+        <p>{isMutantResult ? texts.mutantSuccess : texts.noMutantDetected}</p>
       )}
       {showErrorModal && (
         <div className="error-modal">
@@ -99,16 +102,16 @@ const MutantDetector = ({ onHumanDetected }) => {
         <div className="success-modal">
           <div className="success-modal-content">
             <span className="close-btn" onClick={closeSuccessModal}>×</span>
-            <p>Felicitaciones, eres un mutante. Completa tu email y Magneto te reclutará en breve.</p>
+            <p>{texts.mutantSuccess}</p>
             <form onSubmit={handleSubmitEmail}>
               <input
                 type="email"
                 value={email}
                 onChange={handleChangeEmail}
-                placeholder="Ingresa tu email"
+                placeholder={texts.emailPlaceholder}
                 required
               />
-              <button type="submit">Enviar</button>
+              <button type="submit">{texts.sendButton}</button>
             </form>
           </div>
         </div>
@@ -117,7 +120,7 @@ const MutantDetector = ({ onHumanDetected }) => {
         <div className="success-modal">
           <div className="success-modal-content">
             <span className="close-btn" onClick={closeSuccessModal}>×</span>
-            <p>Email enviado exitosamente. ¡Te esperamos, mutante!</p>
+            <p>{texts.emailSuccess}</p> 
           </div>
         </div>
       )}

@@ -29,6 +29,7 @@ React Components: The project includes several components that demonstrate typic
 JavaScript Logic: Custom JavaScript functions handle the DNA sequence validation and mutant detection, showcasing foundational programming skills.
 Unit Testing with Jest: Key components are tested with Jest to ensure reliability and functionality.
 Product Carousel: Introduced a product carousel for users whose DNA is not detected as mutant, offering a seamless shopping experience with links to real products.
+The app  includes a Language Switcher feature, allowing users to choose between different languages, making Typical practice of global applications accessible. The supported languages are managed through a JSON file (locales.json), which contains translations for the text used in the app.
 ## Development Approach
 The application was developed as a frontend-only solution based on discussions with Gabriel Ivan Nocce, who assigned this challenge. As agreed, no backend service was deployed or developed. The focus was on frontend development and creating a simulated environment to demonstrate my skills in UI design, data handling, and testing.
 

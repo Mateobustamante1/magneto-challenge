@@ -3,8 +3,9 @@ import productsData from '../mocks/products.json';
 import '../styles/ProductCarousel.css';
 import { FaArrowLeft } from 'react-icons/fa';
 import iconmeli from '../assets/iconmeli.png';
+import locales from '../locales-app/locales.json';
 
-const ProductCarousel = ({ onBack }) => {
+const ProductCarousel = ({ onBack, language }) => {
   const [products, setProducts] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -17,15 +18,17 @@ const ProductCarousel = ({ onBack }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobile]);
 
+  const texts = locales[language] || locales["es"]; 
+
   const handleCardClick = (url) => {
     window.open(url, '_blank');
   };
 
   return (
     <div className="product-carousel-overlay">
-      <img src={iconmeli} alt="Icono Meli" className="iconmeli" />
+      <img src={iconmeli} alt={texts.iconAltText} className="iconmeli" />
       <div className="product-carousel-message">
-        <p>UPPS, parece que tu ADN no es de mutante, pero te invitamos a comprar la colección de Magneto</p>
+        <p>{texts.productCarouselMessage}</p>
       </div>
       <div className="carousel-container">
         <FaArrowLeft className="back-arrow-icon" onClick={onBack} />
