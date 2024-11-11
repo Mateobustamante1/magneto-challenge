@@ -18,6 +18,7 @@ Password: 12345
 ## User 2:
 Username: test2
 Password: 12345
+## 
 This login simulates a typical authentication process in a secure app, but without backend integration, allowing Magneto's recruitment team to focus on the app's functionality without server setup.
 
 ## Styles and Animations
