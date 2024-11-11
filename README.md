@@ -44,7 +44,7 @@ I hope this solution meets your expectations, and I am open to discussing it fur
 ## bash
 git clone https://github.com/Mateobustamante1/magneto-challenge.git
 ## Powershell
- npm install
+ npm install /
  npm run dev
 ## Netlify Deploy:
  https://magneto-challenge-2.netlify.app/
