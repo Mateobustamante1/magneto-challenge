@@ -41,10 +41,10 @@ Feedback
 I hope this solution meets your expectations, and I am open to discussing it further. Feel free to reach out for any questions, feedback, or suggestions.
 
 ## To deploy
-bash
-git clone https://github.com/Mateobustamante1/magneto-challenge.git
-npm install
-npm run dev
+## bash
+## git clone https://github.com/Mateobustamante1/magneto-challenge.git
+## npm install
+## npm run dev
 ## Netlify Deploy:
  https://magneto-challenge-2.netlify.app/
 
