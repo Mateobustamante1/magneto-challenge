@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { isMutant } from '../utils/dnaChecker';
 import locales from '../locales-app/locales.json';
 import '../styles/App.css';
@@ -14,7 +14,27 @@ const MutantDetector = ({ onHumanDetected, language }) => {
   const [email, setEmail] = useState("");
   const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
 
-  const texts = locales[language] || locales["es"]; 
+  
+  const dnaInputRef = useRef(null);
+
+  
+  const texts = useMemo(() => locales[language] || locales["es"], [language]);
+
+ 
+  useEffect(() => {
+    if (isMutantResult !== null) {
+      if (isMutantResult) {
+        console.log('200 OK: Mutante detectado');
+      } else {
+        console.log('403 Forbidden: No es mutante');
+      }
+    }
+  }, [isMutantResult]);
+
+  
+  const handleChangeDna = useCallback((e) => {
+    setDna(e.target.value.toUpperCase());
+  }, []);
 
   const handleCheckDna = () => {
     setLoading(true);
@@ -26,10 +46,10 @@ const MutantDetector = ({ onHumanDetected, language }) => {
       const isValidDna = /^[ATCG]+$/.test(dna);
 
       if (!isValidDna) {
-        setError(texts.humanError); 
+        setError(texts.humanError);
         setIsMutantResult(null);
         setShowErrorModal(true);
-        onHumanDetected(); 
+        onHumanDetected();
       } else {
         const result = isMutant(dna);
         setIsMutantResult(result);
@@ -38,16 +58,12 @@ const MutantDetector = ({ onHumanDetected, language }) => {
           setShowSuccessModal(true);
         } else {
           setShowErrorModal(true);
-          onHumanDetected(); 
+          onHumanDetected();
         }
       }
 
       setLoading(false);
     }, 3000);
-  };
-
-  const handleChangeDna = (e) => {
-    setDna(e.target.value.toUpperCase());
   };
 
   const handleChangeEmail = (e) => {
@@ -58,7 +74,7 @@ const MutantDetector = ({ onHumanDetected, language }) => {
     e.preventDefault();
     setIsEmailSubmitted(true);
     setShowSuccessModal(false);
-    console.log("Email enviado: ", email); 
+    console.log("Email enviado: ", email);
   };
 
   const closeErrorModal = () => {
@@ -70,12 +86,20 @@ const MutantDetector = ({ onHumanDetected, language }) => {
     setIsEmailSubmitted(false);
   };
 
+  
+  useEffect(() => {
+    if (showErrorModal) {
+      dnaInputRef.current.focus();
+    }
+  }, [showErrorModal]);
+
   return (
     <div className={`mutant-detector-container fade-in ${showErrorModal ? "fade-out" : ""}`}>
       <img src={iconmeli} alt={texts.iconAltText} className="iconmeli" />
       <h2>{texts.mutantDetectorTitle}</h2>
       <p>{texts.dnaPrompt}</p>
       <input
+        ref={dnaInputRef}
         type="text"
         value={dna}
         onChange={handleChangeDna}
@@ -120,7 +144,7 @@ const MutantDetector = ({ onHumanDetected, language }) => {
         <div className="success-modal">
           <div className="success-modal-content">
             <span className="close-btn" onClick={closeSuccessModal}>×</span>
-            <p>{texts.emailSuccess}</p> 
+            <p>{texts.emailSuccess}</p>
           </div>
         </div>
       )}
