@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef, useReducer } from 'react';
 import { authenticate } from '../utils/mockAuth';
 import locales from '../locales-app/locales.json';
 import '../styles/Login.css';
@@ -9,25 +9,54 @@ const Login = ({ onLogin, language }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const inputRef = useRef(null); 
+  const [submitAttempts, incrementSubmitAttempts] = useReducer((count) => count + 1, 0);
+
+ 
+  const title = useMemo(() => {
+    console.log(`Memoized title for language: ${language}`);
+    return locales[language].loginTitle;
+  }, [language]);
+
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
+    incrementSubmitAttempts(); 
+    console.log('Form submitted');
+
     if (authenticate(username, password)) {
+      console.log('Authentication successful');
       onLogin();
     } else {
       setError(locales[language].loginError);
+      console.log('Authentication failed');
     }
-  };
+  }, [username, password, language, onLogin]);
+
+  
+  useEffect(() => {
+    console.log('Component mounted, focusing on username input');
+    inputRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    console.log(`Username changed to: ${username}`);
+  }, [username]);
+
+  useEffect(() => {
+    console.log(`Password changed`);
+  }, [password]);
 
   return (
     <div className="login-container">
       <img src={iconmeli} alt={locales[language].iconAltText} className="iconmeli" />
-      <h2>{locales[language].loginTitle}</h2>
+      <h2>{title}</h2> 
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder={locales[language].usernamePlaceholder}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          ref={inputRef} 
           required
         />
         <input

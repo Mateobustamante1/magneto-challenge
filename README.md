@@ -25,11 +25,15 @@ This login simulates a typical authentication process in a secure app, but witho
 The app has a simple, user-friendly UI with CSS-based styling and basic animations to enhance the user experience.
 
 ## Functional and Technical Highlights:
-React Components: The project includes several components that demonstrate typical React functionality, such as managing state and handling events.
+React Components: The project includes several components that demonstrate typical React functionality, such as managing state and handling events. The emphasis was placed on the login.jsx and languageSwitcher.jsx components, where hooks and typical React functions were applied to showcase the possible uses of React hooks. Although most of the functions were applied for the purpose of console.log, the idea was to highlight how hooks can be utilized in real use cases.
+
 JavaScript Logic: Custom JavaScript functions handle the DNA sequence validation and mutant detection, showcasing foundational programming skills.
+
 Unit Testing with Jest: Key components are tested with Jest to ensure reliability and functionality.
+
 Product Carousel: Introduced a product carousel for users whose DNA is not detected as mutant, offering a seamless shopping experience with links to real products.
-The app  includes a Language Switcher feature, allowing users to choose between different languages, making Typical practice of global applications accessible. The supported languages are managed through a JSON file (locales.json), which contains translations for the text used in the app.
+
+Language Switcher: The app includes a Language Switcher feature, allowing users to choose between different languages, making the typical practice of global applications accessible. The supported languages are managed through a JSON file (locales.json), which contains translations for the text used in the app.
 ## Development Approach
 The application was developed as a frontend-only solution based on discussions with Gabriel Ivan Nocce, who assigned this challenge. As agreed, no backend service was deployed or developed. The focus was on frontend development and creating a simulated environment to demonstrate my skills in UI design, data handling, and testing.
 
