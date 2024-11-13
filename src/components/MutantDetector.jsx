@@ -63,7 +63,7 @@ const MutantDetector = ({ onHumanDetected, language }) => {
       }
 
       setLoading(false);
-    }, 3000);
+    }, 1000);
   };
 
   const handleChangeEmail = (e) => {
