@@ -2,11 +2,12 @@
     margin-top: 10px;
     font-size: 14px;
     font-weight: bold;
+    font-family: 'Proxima Nova', sans-serif;
     color: #fff;
     padding: 10px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     text-align: center;
-    background: linear-gradient(135deg, #ff0000, #100101);
+    background: #f55363;
     border-radius: 8px;
     width: 90%;
     max-width: 500px; 
@@ -23,7 +24,7 @@
 }
 
 .back-arrow-icon:hover {
-    color: #ff0000;
+    color: #100202;
 }
 
 .carousel-container {

@@ -1,12 +1,12 @@
 body {
-  background: linear-gradient(to bottom, #FFFF00, #000000); 
+  background: #eed130;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: 'Proxima Nova', sans-serif;
 }
 
 .mutant-detector-container {
@@ -26,7 +26,7 @@ body {
 
 .mutant-detector-container p {
   font-size: 16px;
-  color: #0a0808;
+  color: #1a1616;
 }
 
 
@@ -44,7 +44,7 @@ body {
 
 .mutant-detector-container button {
   padding: 12px 20px;
-  background-color: #00bcd4;
+  background-color: #009EE3;
   color: white;
   border: none;
   border-radius: 5px;
@@ -59,7 +59,7 @@ body {
 
 
 .error {
-  color: red;
+  color: #F3606E;
   margin-top: 10px;
   font-size: 14px;
 }
@@ -153,7 +153,7 @@ body {
 }
 
 .success-modal button {
-  background-color: #4CAF50;
+  background-color: #009EE3;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -162,7 +162,7 @@ body {
 }
 
 .success-modal button:hover {
-  background-color: #45a049;
+  background-color: #6FA2B0;
 }
 
 
@@ -210,7 +210,7 @@ body {
 }
 
 .success-modal-content {
-  background: linear-gradient(to bottom, #4CAF50, #f7f6f6);
+  background: #00A650;
 }
 
 .error-modal-content {
